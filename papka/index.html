@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Привет World</title>
+<style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-image: url("gifs/kamin.gif");
+            background-size: cover;      /* fill the screen */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    	.title 
+	{
+        	text-align: center;
+        	color: white;
+		z-index: 2;
+    	}
+	#startBtn {
+        	opacity: 0;
+        	position: absolute;
+        	inset: 0;
+        	width: 100%;
+       	 	height: 100%;
+        	cursor: pointer;
+		z-index: 1;
+    	}
+.center-link {
+            display: block;                    
+  		text-align: center; 
+             margin-top: 50px;
+            font-size: 24px;   
+        }
+        .center-link a {
+            text-decoration: none;   
+            color: blue;             
+        }
+        .center-link a:hover {
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="title">
+    sync C++11 server using boost.beast library.
+</h1>
+	<audio id="fire" loop muted>
+    <source src="sound/fire-sounds.mp3" type="audio/mpeg">
+</audio>
+	<button id="startBtn" onclick="startSound()">Start</button>
+
+<div class="center-link">
+    <a href="https://github.com/Ripich103?tab=repositories" target="_blank">Go to this project github</a>
+</div>
+
+	<script>
+    function startSound() {
+        const audio = document.getElementById("fire");
+	audio.muted = false;
+        audio.play();
+	document.getElementById("startBtn").style.pointerEvents = "none";
+    }
+</script>
+	
+</body>
+</html>
